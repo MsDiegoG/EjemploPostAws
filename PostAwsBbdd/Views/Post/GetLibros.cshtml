@@ -1,0 +1,32 @@
+﻿@model List<Libro>
+
+@{
+    ViewData["Title"] = "GetLibros";
+}
+
+<h1>GetLibros</h1>
+<br />
+<table class="table table-striped" style="margin: 0 auto;">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Categoría</th>
+            <th>País</th>
+            <th>Imagen</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (Libro lib in Model) {
+        <tr>
+            <td>@lib.Titulo</td>
+            <td>@lib.Autor</td>
+            <td>@lib.Categoria</td>
+            <td>@lib.Pais</td>
+            <td><img src="~/images/@lib.Imagen" style="width: 150px; height:200px"/></td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
